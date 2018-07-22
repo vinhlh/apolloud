@@ -30,7 +30,6 @@
     "run": "node index.js",
     "dev": "backpack dev",
     "build": "backpack build",
-    "postinstall": "backpack build",
     "format": "prettier --write 'src/*.js'",
     "lint": "eslint src",
     "test": "yarn lint"
