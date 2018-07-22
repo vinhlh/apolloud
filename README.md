@@ -3,6 +3,12 @@
 # Apolloud
 Shuffle play all SoundCloud tracks liked by an user.
 
+<p align="center">
+	<br>
+	<img src="apolloud.svg" width="800">
+	<br>
+</p>
+
 ## Usage
 - Install via `yarn global add apolloud`
 
