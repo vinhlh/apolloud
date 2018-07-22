@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/vinhlh/apolloud.svg?branch=master)](https://travis-ci.com/vinhlh/apolloud)
+
 # Apolloud
 Shuffle play all SoundCloud tracks liked by an user.
 
