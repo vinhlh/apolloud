@@ -13,10 +13,10 @@ Example: `apolloud vinhlh`.
 
 Underneath, we are using `Puppeteer` to launch a Chromium instance.
 
-### Slow install
+### Slow installation
 When you install Apolloud, it downloads a recent version of Chromium (~170Mb Mac, ~282Mb Linux, ~280Mb Win).
 
-### Slow start
+### Slow intialization
 It will takes around 10 seconds.
 
 ## Contributing
