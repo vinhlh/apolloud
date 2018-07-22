@@ -1,7 +1,23 @@
 {
   "name": "apolloud",
   "version": "1.0.4",
+  "description": "Shuffle play all SoundCloud tracks liked by an user",
+  "author": "Vinh Le <hung.vjnh@gmail.com>",
+  "keywords": [
+    "soundcloud",
+    "soundcloud-cli",
+    "player",
+    "soundcloud-player"
+  ],
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vinhlh/apolloud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vinhlh/apolloud/issues"
+  },
+  "homepage": "https://github.com/vinhlh/apolloud#readme",
   "license": "MIT",
   "dependencies": {
     "backpack-core": "^0.7.0",
