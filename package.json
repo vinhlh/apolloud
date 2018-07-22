@@ -1,0 +1,21 @@
+{
+  "name": "apolloud",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "backpack-core": "^0.7.0",
+    "chalk": "^2.4.1",
+    "log-update": "^2.3.0",
+    "ora": "^3.0.0",
+    "puppeteer": "https://github.com/vinhlh/puppeteer",
+    "terminal-link": "^1.1.0"
+  },
+  "scripts": {
+    "run": "node index.js",
+    "dev": "backpack dev",
+    "build": "backpack build",
+    "postinstall": "backpack build",
+    "format": "prettier --write 'src/*.js'"
+  }
+}
