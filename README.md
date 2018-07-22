@@ -1,6 +1,10 @@
 # Apolloud
 Shuffle play all SoundCloud tracks liked by an user.
 
+## Usage
+`apolloud userName`
+Example: `apolloud vinhlh`.
+
 ## Limits
 
 Underneath, we are using `Puppeteer` to launch a Chromium instance.
