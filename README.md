@@ -2,7 +2,7 @@
 Shuffle play all SoundCloud tracks liked by an user.
 
 ## Usage
-- Install via `sudo npm install -g apolloud`
+- Install via `yarn global add apolloud`
 
 - Run `apolloud userName`
 Example: `apolloud vinhlh`.
