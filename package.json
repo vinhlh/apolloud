@@ -27,7 +27,7 @@
     "puppeteer": "https://github.com/vinhlh/puppeteer"
   },
   "scripts": {
-    "run": "node index.js",
+    "start": "node index.js",
     "dev": "backpack dev",
     "build": "backpack build",
     "format": "prettier --write 'src/*.js'",

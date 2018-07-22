@@ -5,6 +5,11 @@ import { listenKeyPress } from './utils'
 const UPDATE_PLAYER_STATE_INTERVAL = 1000
 
 const runApp = async user => {
+  if (!user) {
+    console.error('You need to specify SoundCloud user name parameter!')
+    return
+  }
+
   const player = new PlayerUI()
   const browser = new Browser()
 

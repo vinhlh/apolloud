@@ -22,4 +22,4 @@ It will takes around 10 seconds.
 ## Contributing
 - `yarn dev` to compile automatically.
 
-- Run `yarn run` to run the app whenever you need.
+- Run `yarn start` to run the app whenever you need.
