@@ -1,12 +1,13 @@
+import chalk from 'chalk'
+
 import PlayerUI from './PlayerUI'
 import Browser from './Browser'
-import { listenKeyPress } from './utils'
+import { validateCmdArgs, listenKeyPress } from './utils'
 
 const UPDATE_PLAYER_STATE_INTERVAL = 1000
 
-const runApp = async user => {
-  if (!user) {
-    console.error('You need to specify SoundCloud user name parameter!')
+const runApp = async (userName, trackType) => {
+  if (!validateCmdArgs(userName, trackType)) {
     return
   }
 
@@ -14,10 +15,10 @@ const runApp = async user => {
   const browser = new Browser()
 
   await browser.init()
-  await browser.viewUser(user)
-  await browser.enableSuffle(player)
+  await browser.viewUser(userName)
+  await browser.enableShuffle()
 
-  await browser.triggerPlay()
+  await browser.triggerPlay(trackType)
   player.setState({ playing: true })
 
   setInterval(async () => {

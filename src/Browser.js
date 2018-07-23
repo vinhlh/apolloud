@@ -1,5 +1,7 @@
 import puppeteer from 'puppeteer'
 
+import { TYPE_LIKES, TYPE_ALL } from './utils'
+
 class Browser {
   async init() {
     await this.initBrowser()
@@ -52,13 +54,21 @@ class Browser {
     }))
   }
 
-  async triggerPlay() {
-    await this.page.evaluate(() => {
-      document.querySelector('.soundBadgeList__item .playButton').click()
-    })
+  getFirstTrackSelectorByType(type) {
+    return {
+      [TYPE_LIKES]: '.soundBadgeList__item .playButton',
+      [TYPE_ALL]: '.userStreamItem .playButton'
+    }[type]
   }
 
-  async enableSuffle() {
+  async triggerPlay(trackType) {
+    const firstTrackSelector = this.getFirstTrackSelectorByType(trackType)
+    await this.page.evaluate(selector => {
+      document.querySelector(selector).click()
+    }, firstTrackSelector)
+  }
+
+  async enableShuffle() {
     await this.page.evaluate(() => {
       document.querySelector('.shuffleControl').click()
     })

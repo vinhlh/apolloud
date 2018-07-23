@@ -12,8 +12,10 @@ Shuffle play all SoundCloud tracks liked by an user.
 ## Usage
 - Install via `yarn global add apolloud`
 
-- Run `apolloud userName`
+- Run `apolloud {userName} {trackType}`
 Example: `apolloud vinhlh`.
+
+Supported track types: `likes`(default), `all` (tracks on All tab).
 
 ## Limits
 
