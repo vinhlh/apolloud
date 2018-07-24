@@ -31,7 +31,7 @@ const listenKeyPress = ({ onPressToggle, onPressNext }) => {
   })
 }
 
-const validateCmdArgs = (userName, trackType = TYPE_LIKES) => {
+const validateCmdArgs = (userName, trackType) => {
   if (!userName) {
     console.error(chalk`SoundCloud user name is required!
   Example: {yellow apolloud vinhlh}.

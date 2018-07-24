@@ -2,11 +2,11 @@ import chalk from 'chalk'
 
 import PlayerUI from './PlayerUI'
 import Browser from './Browser'
-import { validateCmdArgs, listenKeyPress } from './utils'
+import { TYPE_LIKES, validateCmdArgs, listenKeyPress } from './utils'
 
 const UPDATE_PLAYER_STATE_INTERVAL = 1000
 
-const runApp = async (userName, trackType) => {
+const runApp = async (userName, trackType = TYPE_LIKES) => {
   if (!validateCmdArgs(userName, trackType)) {
     return
   }
