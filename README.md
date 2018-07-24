@@ -9,10 +9,18 @@ Shuffle play all SoundCloud tracks liked by an user.
 	<br>
 </p>
 
-## Usage
-- Install via `yarn global add apolloud`
 
-- Run `apolloud {userName} {trackType}`
+
+## Usage
+- Install
+```bash
+yarn global add apolloud
+```
+
+- Run 
+```bash
+apolloud {userName} {trackType}
+```
 Example: `apolloud vinhlh`.
 
 Supported track types: `likes`(default), `all` (tracks on All tab).
@@ -22,7 +30,7 @@ Supported track types: `likes`(default), `all` (tracks on All tab).
 Underneath, we are using `Puppeteer` to launch a Chromium instance.
 
 ### Slow installation
-When you install Apolloud, it downloads a recent version of Chromium (~170Mb Mac, ~282Mb Linux, ~280Mb Win).
+Apolloud depends on [Puppeteer](https://github.com/GoogleChrome/puppeteer) which downloads a recent version of Chromium (~170MB Mac, ~280MB Linux, ~280MB Win).
 
 ### Slow intialization
 It will takes around 10 seconds.
