@@ -7,24 +7,25 @@ const TYPE_ALL = 'all'
 
 const validTypes = [TYPE_LIKES, TYPE_ALL]
 
-const listenKeyPress = ({ onPressToggle, onPressNext }) => {
+const listenKeyPress = ({ onPressToggle, onPressNext, onClose }) => {
   const { stdin } = process
 
   stdin.setRawMode(true)
   stdin.resume()
   stdin.setEncoding('utf8')
 
-  stdin.on('data', function(key) {
+  stdin.on('data', async key => {
     if (key === KEYPRESS_VALUE_CTRL_C) {
+      await onClose()
       process.exit()
     }
 
     if (['p', 'P'].includes(key)) {
-      onPressToggle()
+      await onPressToggle()
     }
 
     if (['n', 'N'].includes(key)) {
-      onPressNext()
+      await onPressNext()
     }
 
     process.stdout.write(key)

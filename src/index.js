@@ -28,12 +28,15 @@ const runApp = async (userName, trackType = TYPE_LIKES) => {
   }, UPDATE_PLAYER_STATE_INTERVAL)
 
   listenKeyPress({
-    onPressToggle() {
-      browser.tooglePlay()
+    onPressToggle: async () => {
+      await browser.tooglePlay()
       player.setState({ playing: !player.state.playing })
     },
-    onPressNext() {
-      browser.nextTrack()
+    onPressNext: async () => {
+      await browser.nextTrack()
+    },
+    onClose: async () => {
+      await browser.close()
     }
   })
 }
