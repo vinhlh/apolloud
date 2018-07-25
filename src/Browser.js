@@ -56,6 +56,7 @@ class Browser {
     this.page.setViewport({
       width: viewPortSize,
       height: viewPortSize,
+      deviceScaleFactor: 1
     })
     await this.page.setRequestInterception(true)
 
@@ -114,6 +115,10 @@ class Browser {
     await this.page.evaluate(() => {
       document.querySelector('.playControls__next').click()
     })
+  }
+
+  async close() {
+    await this.browser.close()
   }
 }
 
