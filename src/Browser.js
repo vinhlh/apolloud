@@ -12,7 +12,16 @@ class Browser {
 
   dontLoadRedundantResources(request) {
     const resourceType = request.resourceType()
+    const url = request.url()
     if (['image', 'stylesheet'].includes(resourceType)) {
+      return request.abort()
+    }
+
+    if (
+      resourceType === 'script' &&
+      !url.includes('sndcdn') &&
+      !url.includes('soundcloud')
+    ) {
       return request.abort()
     }
 
