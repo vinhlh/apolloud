@@ -3,6 +3,8 @@ import puppeteer from 'puppeteer'
 import { TYPE_LIKES, TYPE_ALL } from './utils'
 
 class Browser {
+  debug = false
+
   async init() {
     await this.initBrowser()
     await this.initPage()
@@ -21,7 +23,7 @@ class Browser {
     this.browser = await puppeteer.launch({
       ignoreDefaultArgs: true,
       args: puppeteer.defaultArgs(),
-      headless: true
+      headless: this.isHeadless()
     })
   }
 
@@ -31,9 +33,10 @@ class Browser {
 
   async initPage() {
     this.page = await this.browser.newPage()
+    const viewPortSize = this.getViewPortSize()
     this.page.setViewport({
-      width: 10,
-      height: 10
+      width: viewPortSize,
+      height: viewPortSize,
     })
     await this.page.setRequestInterception(true)
 
@@ -52,6 +55,14 @@ class Browser {
         .querySelector('.playbackSoundBadge__titleLink')
         .getAttribute('title')
     }))
+  }
+
+  isHeadless() {
+    return !this.debug
+  }
+
+  getViewPortSize() {
+    return this.debug ? 800 : 1
   }
 
   getFirstTrackSelectorByType(type) {
