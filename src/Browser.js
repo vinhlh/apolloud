@@ -31,8 +31,18 @@ class Browser {
     await this.page.goto('https://soundcloud.com/' + user)
   }
 
+  async getPage() {
+    const pages = await this.browser.pages()
+    if (pages.length) {
+      return pages[0]
+    }
+
+    return await this.browser.newPage()
+  }
+
   async initPage() {
-    this.page = await this.browser.newPage()
+    this.page = await this.getPage()
+
     const viewPortSize = this.getViewPortSize()
     this.page.setViewport({
       width: viewPortSize,
