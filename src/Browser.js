@@ -19,8 +19,7 @@ class Browser {
 
     if (
       resourceType === 'script' &&
-      !url.includes('sndcdn') &&
-      !url.includes('soundcloud')
+      !/(sndcdn|soundcloud|myvisualiq|quant)/.test(url)
     ) {
       return request.abort()
     }
